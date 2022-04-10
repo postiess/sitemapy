@@ -4,7 +4,7 @@
 
 Simple utility to generate sitemaps
 
-## How to use ?
+## 👀 How to use ?
 
 ```sh
 npm i sitemapy
