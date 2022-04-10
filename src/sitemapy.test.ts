@@ -1,6 +1,6 @@
 import {generateElement, checkConfig} from "./helpers"
 
-import createSitemap, {SitemapElement, SitemapConfig} from "./sitemapy"
+import {createSitemap, SitemapElement, SitemapConfig} from "./sitemapy"
 
 const siteRootMock: string = "https://google.com"
 
