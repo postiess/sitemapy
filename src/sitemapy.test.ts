@@ -37,11 +37,10 @@ test("Check URL XML child generation", () => {
 })
 
 test("Check sitemap generation", () => {
-    const expectedResult = `<?xmlversion="1.0"encoding="UTF-8"?><urlsetxmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://google.com/https://google.com</loc><priority>0.75</priority></url></urlset>`
+    const expectedResult = `<?xml version=\"1.0\" encoding=\"UTF-8\"?><urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"><url><loc>https://google.com/https://google.com</loc><priority>0.75</priority></url></urlset>`
     const sitemap = createSitemap({
        pages: pagesMock,
        siteRoot: siteRootMock
     })
     expect(sitemap).toBe(expectedResult)
 })
-
