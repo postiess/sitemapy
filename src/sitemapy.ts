@@ -20,7 +20,7 @@ const end = `</urlset>`
 
 
 
-export const createSitemap = (config: SitemapConfig): any => {
+export const createSitemap = (config: SitemapConfig): string => {
     checkConfig(config)
     const {siteRoot, pages} = config
     let sitemap = start + (pages as Array<any>).map(page => generateElement(page, siteRoot as string)).join("") + end
