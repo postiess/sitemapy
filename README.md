@@ -40,7 +40,7 @@ import {createSitemap} from "sitemapy"
 
 app.get("/sitemap.xml", async (req, res) => {
     const siteRoot = "https://github.com"
-    const data = await axios.get("/api/sitemapData")
+    const {data} = await axios.get("/api/sitemapData")
 
     const sitemap = createSitemap({pages: data, siteRoot})
 
