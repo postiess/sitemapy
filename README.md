@@ -22,10 +22,34 @@ let pages = [
         priority: 1,
         changefreq: "daily",
         lastmod: 10-04-22
-    },
+    }
 ]
 
 const sitemap = createSitemap({pages, siteRoot}) //returns string of sitemap XML
+
+```
+
+## Typescript
+
+```js
+
+import {createSitemap} from "sitemapy"
+import type {SitemapElement, SitemapConfig} from "sitemapy"
+
+const siteRoot = "https://github.com"
+
+let pages: Array<SitemapElement> = [
+    {
+        url: "/about", //all optional except url
+        priority: 1,
+        changefreq: "daily",
+        lastmod: 10-04-22
+    }
+]
+
+const config: SitemapConfig = {pages, siteRoot}
+
+const sitemap = createSitemap(config) //returns string of sitemap XML
 
 ```
 
