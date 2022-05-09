@@ -21,7 +21,7 @@ let pages = [
         url: "/about", //all optional except url
         priority: 1,
         changefreq: "daily",
-        lastmod: 10-04-22
+        lastmod: "10-04-22"
     }
 ]
 
@@ -43,7 +43,7 @@ let pages: Array<SitemapElement> = [
         url: "/about", //all optional except url
         priority: 1,
         changefreq: "daily",
-        lastmod: 10-04-22
+        lastmod: "10-04-22"
     }
 ]
 
@@ -73,3 +73,25 @@ app.get("/sitemap.xml", async (req, res) => {
 })
 
 ```
+
+## Breaking changes on sitemapy versions >=2.4.0
+
+In versions prior to 2.4.0, urls would already have the starting slash prefixed.
+Now that is left for the user to define themselves, it makes more sense.
+
+
+
+Prior to 2.4.0
+
+```js
+const url = "about";
+ ```
+
+Would result in "https://example.com/about"
+
+After and including version 2.4.0
+
+```js
+const url = "/about";
+ ```
+Would result in "https://example.com/about"
