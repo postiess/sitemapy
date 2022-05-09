@@ -1,12 +1,12 @@
-import { MissingOption } from "./errors";
+import { MissingOptionError } from "./errors";
 import { SitemapConfig, SitemapElement } from "./sitemapy";
 
 export const generateElement = (config: SitemapElement, siteRoot: string) => {
   if (typeof config.url == "undefined") {
     //must at minimum have url provided
-    throw new MissingOption("url");
+    throw new MissingOptionError("url");
   }
-  return `<url><loc>${siteRoot}/${config.url}</loc>
+  return `<url><loc>${siteRoot}${config.url}</loc>
       ${config.lastmod ? `<lastmod>${config.lastmod}</lastmod>` : ""}
       <priority>${config.priority}</priority>
       ${
@@ -24,6 +24,6 @@ export const checkConfig = (config: SitemapConfig) => {
     options.push("pages");
   }
   if (options.length > 0) {
-    throw new MissingOption(options);
+    throw new MissingOptionError(options);
   }
 };
