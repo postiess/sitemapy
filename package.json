@@ -1,6 +1,6 @@
 {
   "name": "sitemapy",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "description": "Simple utility to generate sitemaps in xml, with zero dependencies",
   "main": "dist/sitemapy.js",
   "scripts": {
